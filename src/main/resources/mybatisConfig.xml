@@ -5,8 +5,13 @@
 
 <configuration>
 
+    <!--别名设置-->
+    <typeAliases>
+        <package name="cxy.ssm.model"/>
+    </typeAliases>
+
     <mappers>
-        <mapper resource="cxy/ssm/dao/old/UserMapper.xml"/>
+        <mapper resource="cxy/ssm/dao/old/User.xml"/>
     </mappers>
 
 </configuration>

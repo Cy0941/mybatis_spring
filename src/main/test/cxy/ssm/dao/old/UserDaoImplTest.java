@@ -22,7 +22,7 @@ public class UserDaoImplTest extends TestCase {
     }
 
     public void testFindOne() throws Exception {
-        UserDaoImpl userDao = applicationContext.getBean(UserDaoImpl.class);
+        UserDao userDao = (UserDao)applicationContext.getBean("userDao");
         User one = userDao.findOne(1);
         System.out.println(one);
     }

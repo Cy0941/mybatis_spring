@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="traditional">
-    <select id="findOne" resultType="user" parameterType="java.lang.Integer">
+<mapper namespace="test">
+    <select id="findOne" resultType="cxy.ssm.model.User" parameterType="java.lang.Integer">
         SELECT *
         FROM user
         WHERE id = #{id}

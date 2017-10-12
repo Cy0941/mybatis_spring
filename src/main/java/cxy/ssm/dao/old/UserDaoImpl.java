@@ -3,7 +3,6 @@ package cxy.ssm.dao.old;
 import cxy.ssm.model.User;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
-import org.springframework.stereotype.Repository;
 
 /**
  * Function: TODO
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Repository;
  * @author: cx.yang
  * @since: Thinkingbar Web Project 1.0
  */
-@Repository
 public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 
 
@@ -25,7 +23,7 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
      */
     public User findOne(Integer id) throws Exception {
         SqlSession sqlSession = this.getSqlSession();
-        User user = sqlSession.selectOne("traditional.findOne", id);
+        User user = sqlSession.selectOne("test.findOne", id);
         return user;
     }
 }
