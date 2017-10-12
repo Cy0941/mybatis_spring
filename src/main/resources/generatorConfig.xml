@@ -35,8 +35,12 @@
             <ignoreColumn column="FRED" />
             <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
         </table>-->
-        <table tableName="items"/>
-        <table tableName="orders"/>
+        <table tableName="items">
+            <columnOverride column="createtime" property="createTime"/>
+        </table>
+        <table tableName="orders">
+            <columnOverride column="createtime" property="createTime"/>
+        </table>
         <table tableName="orders_detail"/>
         <table tableName="user"/>
 
