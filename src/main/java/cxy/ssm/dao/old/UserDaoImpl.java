@@ -23,7 +23,7 @@ public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
      */
     public User findOne(Integer id) throws Exception {
         SqlSession sqlSession = this.getSqlSession();
-        User user = sqlSession.selectOne("test.findOne", id);
+        User user = sqlSession.selectOne("traditional.findOne", id);
         return user;
     }
 }

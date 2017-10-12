@@ -5,6 +5,16 @@
 
 <configuration>
 
+    <!--整合的话，不设置settings也行 -->
+    <settings>
+        <!-- 打开延迟加载的开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 将积极加载改为消极加载，即延迟加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!-- 开启二级缓存 -->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
     <!--别名设置-->
     <typeAliases>
         <package name="cxy.ssm.model"/>
@@ -12,6 +22,8 @@
 
     <mappers>
         <mapper resource="cxy/ssm/dao/old/User.xml"/>
+        <!--使用mapper开发批量导入映射文件-->
+        <package name="cxy.ssm.dao.mapper"/>
     </mappers>
 
 </configuration>
