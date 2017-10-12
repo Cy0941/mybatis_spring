@@ -22,8 +22,11 @@
 
     <mappers>
         <mapper resource="cxy/ssm/dao/old/User.xml"/>
-        <!--使用mapper开发批量导入映射文件-->
-        <package name="cxy.ssm.dao.mapper"/>
+        <!--
+            1、使用mapper开发批量导入映射文件
+            2、与 Spring 整合并使用 org.mybatis.spring.mapper.MapperScannerConfigurer 扫描并生成代理时，满足命名条件及目录相同且namespace为对应接口全限定名时可省略此配置
+        -->
+        <!--<package name="cxy.ssm.dao.mapper"/>-->
     </mappers>
 
 </configuration>

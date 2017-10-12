@@ -36,4 +36,22 @@
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 
+    <!--
+        MapperFactoryBean：根据 mapper 生成代理对象
+        每个 mapper 对象都需要进行配置 - 不推荐
+    -->
+    <!--<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="userMapper">
+        <property name="mapperInterface" value="cxy.ssm.dao.mapper.UserMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>-->
+
+    <!--
+        1、自动扫描 mapperInterface.java & mapperInterface.xml 并生成代理对象
+        2、当 mapperInterface.java & mapperInterface.xml 同名且位于同一目录下时，可以代替 mybatisConfig.xml 下 mapper->mappers->package 配置
+    -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="cxy.ssm.dao.mapper"/>
+    </bean>
+
 </beans>
